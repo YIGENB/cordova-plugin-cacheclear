@@ -17,7 +17,7 @@
 //默认调用检查缓存
 - (void)getCacheSize:(CDVInvokedUrlCommand *)command
 {
-    [self.commandDelegate runInBackground:^{
+//    [self.commandDelegate runInBackground:^{
         NSLog(@"检查缓存");
         NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
         NSLog(@"%@", path); //打印缓存路径
@@ -71,7 +71,7 @@
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
             [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }
-    }];
+//    }];
 }
  
 //计算单个文件夹的大小
